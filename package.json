@@ -24,7 +24,8 @@
   "homepage": "https://github.com/OptimalBits/node-adleria",
   "dependencies": {
     "lodash": "^3.9.3",
-    "request-promise": "^0.4.2"
+    "request-promise": "^0.4.2",
+    "url-join": "0.0.1"
   },
   "devDependencies": {
     "chai": "^3.0.0",
