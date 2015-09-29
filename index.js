@@ -16,6 +16,7 @@ module.exports = function (networkId, apiToken, opts) {
   var baseUrl = opts.url || 'https://dev.adleria.com/';
   return {
     adspaces: require('./lib/adspaces')(auth, baseUrl, opts),
-    players: require('./lib/players')(auth, baseUrl, opts)
+    players: require('./lib/players')(auth, baseUrl, opts),
+    payoutOrders: require('./lib/payoutOrders')(auth, baseUrl, opts)
   };
 };
