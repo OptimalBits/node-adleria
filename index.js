@@ -17,6 +17,7 @@ module.exports = function (networkId, apiToken, opts) {
   return {
     adspaces: require('./lib/adspaces')(auth, baseUrl, opts),
     players: require('./lib/players')(auth, baseUrl, opts),
-    payoutOrders: require('./lib/payoutOrders')(auth, baseUrl, opts)
+    payoutOrders: require('./lib/payoutOrders')(auth, baseUrl, opts),
+    networks: require('./lib/networks')(auth, baseUrl, opts)
   };
 };
