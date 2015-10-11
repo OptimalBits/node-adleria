@@ -1,6 +1,6 @@
 {
   "name": "adleria",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Adleria (https://adlerial.com) API for nodejs",
   "main": "index.js",
   "scripts": {
