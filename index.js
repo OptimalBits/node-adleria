@@ -20,6 +20,7 @@ module.exports = function (networkId, apiToken, opts) {
     payoutOrders: require('./lib/payoutOrders')(auth, baseUrl, opts),
     networks: require('./lib/networks')(auth, baseUrl, opts),
     tags: require('./lib/tags')(auth, baseUrl, opts),
-    agents: require('./lib/agents')(auth, baseUrl, opts)
+    agents: require('./lib/agents')(auth, baseUrl, opts),
+    customers: require('./lib/customers')(auth, baseUrl, opts)
   };
 };
