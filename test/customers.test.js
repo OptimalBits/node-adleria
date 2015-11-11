@@ -5,7 +5,7 @@
 'use strict';
 
 var networkId = 'test-id-test';
-var adleria = require('../')(networkId, 'test-token-test', {url: 'http://localhost:2341/cms/'});
+var adleria = require('../')(networkId, 'test-token', {url: 'http://localhost:2341/cms/'});
 
 var chai = require('chai');
 chai.use(require('chai-datetime'));
@@ -80,6 +80,35 @@ describe('Customers tests', function(){
     it('Should be posible to delete customer adspace', function(){
       return adleria.customers.adspaces.delete(customerId, adspaceId).then(function(res){
         expect(res);
+      });
+    });
+    
+    describe('Players', function(){
+      var adspaceId;
+      before(function(){
+        return adleria.customers.adspaces.create(customerId, {name: 'Test Adspace'}).then(function(adspace){
+          adspaceId = adspace._id;
+        });
+      });
+      it('should be possible to create a player into an adspace', function(){
+        return adleria.customers.adspaces.players.create(customerId, adspaceId, {name: 'Test Player'}).then(function(player){
+          return adleria.customers.adspaces.players.list(customerId, adspaceId).then(function(players){
+            expect(players).to.be.an('array');
+            expect(players.length).to.be.equal(1);
+            expect(players[0]).to.be.an('object');
+            expect(players[0]).to.have.property('name', 'Test Player');
+          });
+        });
+      });
+
+      it('should be possible to assign/unassign a player to an adspace', function(){
+        var playerId;
+        return adleria.customers.adspaces.players.create(customerId, adspaceId, {name: 'Test Player'}).then(function(player){
+          playerId = player._id;
+          return adleria.customers.adspaces.players.unassign(customerId, adspaceId, playerId);
+        }).then(function(){
+          return adleria.customers.adspaces.players.assign(customerId, adspaceId, playerId);
+        }); 
       });
     });
   });
