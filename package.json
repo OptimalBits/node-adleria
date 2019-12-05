@@ -24,7 +24,7 @@
   "homepage": "https://github.com/OptimalBits/node-adleria",
   "dependencies": {
     "bluebird": "^2.9.34",
-    "lodash": "^3.9.3",
+    "lodash": "^4.17.15",
     "request-promise": "^0.4.2",
     "url-join": "0.0.1"
   },
