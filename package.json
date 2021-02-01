@@ -1,6 +1,6 @@
 {
   "name": "adleria",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Adleria (https://adlerial.com) API for nodejs",
   "main": "index.js",
   "scripts": {
@@ -24,8 +24,10 @@
   "homepage": "https://github.com/OptimalBits/node-adleria",
   "dependencies": {
     "bluebird": "^2.9.34",
+    "global": "^4.4.0",
     "lodash": "^3.9.3",
     "request-promise": "^0.4.2",
+    "taskforce-connector": "^1.11.0",
     "url-join": "0.0.1"
   },
   "devDependencies": {
